@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         self.setUpUI()
         
-        for i in 1...151{
+        for i in 1...150{
             PokePics1.append(i)
         }
         
