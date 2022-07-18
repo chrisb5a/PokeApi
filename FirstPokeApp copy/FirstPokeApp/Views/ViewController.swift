@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleToFill
+        
         imageView.image = UIImage(named: "PokeImg")
         return imageView
         
@@ -28,7 +29,7 @@ class ViewController: UIViewController {
         label.setContentHuggingPriority(.required, for: .vertical)
         label.setContentCompressionResistancePriority(.required, for: .vertical)
         //label.text = "Pokemon_Name"
-        label.backgroundColor = .systemOrange
+        //label.backgroundColor = .systemOrange
         return label
     }()
     
@@ -40,7 +41,7 @@ class ViewController: UIViewController {
         label.setContentHuggingPriority(.required, for: .vertical)
         label.setContentCompressionResistancePriority(.required, for: .vertical)
         label.text = "Pokemon_type"
-        label.backgroundColor = .systemOrange
+        //label.backgroundColor = .systemOrange
         return label
     }()
     
@@ -82,25 +83,81 @@ class ViewController: UIViewController {
 
     private func setUpUI() {
         
+        
+//        let vStackName = UIStackView(axis: .vertical, spacing: 50 , distribution: .fillProportionally)
+//        let vStackImg = UIStackView(axis: .vertical, spacing: 8 , distribution: .fill)
+//        let hStackTypeAbility = UIStackView(axis: .horizontal, spacing: 8 , distribution: .fill)
+//        let vStackMoves = UIStackView(axis: .vertical, spacing: 8 , distribution: .fill)
+//
+//
+//        vStackName.addArrangedSubview(self.Name)
+//        vStackImg.addArrangedSubview(self.progImageView2)
+
+
+
+
+
+
+
+
+
+
         self.view.addSubview(self.Name)
         self.view.addSubview(self.progImageView2)
         self.view.addSubview(self.Types)
         self.view.addSubview(self.Abilities)
         self.view.addSubview(self.MovesList)
         
+        
         self.Name.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 8).isActive = true
-        self.Name.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
-        self.Name.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
+//        self.Name.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
+//        self.Name.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
         
-        self.progImageView2.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
-        self.progImageView2.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
+        self.Name.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         
+        self.progImageView2.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 80).isActive = true
+        
+//        self.Types.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor, constant: 200).isActive = true
+        
+//        self.progImageView2.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
+//        self.progImageView2.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
+        
+        self.progImageView2.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        self.progImageView2.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        self.progImageView2.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        
+        
+        //self.progImageView2.contentScaleFactor = .
+        //self.Types.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        //self.Types.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor, constant: 50).isActive = true
+        
+        self.Types.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 32).isActive = true
+        
+//        self.Types.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
+//        self.Types.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
         
         self.Types.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        self.Types.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor, constant: 50).isActive = true
-        self.Types.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
-        self.Types.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
+       
+        self.Abilities.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 56).isActive = true
+//        self.Abilities.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
+//        self.Abilities.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
         
+        self.Abilities.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        
+    
+        
+
+        self.MovesList.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        self.MovesList.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor, constant: 200).isActive = true
+        self.MovesList.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
+        
+        self.MovesList.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
+        self.MovesList.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        
+        
+        //self.Abilities.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        
+//
         
     }
     
@@ -114,7 +171,7 @@ class ViewController: UIViewController {
         self.Abilities.text = "Abilities: " + abilities
         let type = String("\(pokemon[String(indexP+1)]![2])")
         self.Types.text = "Types: " + type
-        let moves = String("\(pokemon[String(indexP+1)]![3])")
+        let moves = String("\(pokemon[String(indexP+1)]![4])")
         self.MovesList.text = "moves: " + moves
     }
     
@@ -139,49 +196,6 @@ class ViewController: UIViewController {
         }
         
     }
-
-        
-  
-//        self.Name.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
-//        self.Name.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
-//
-//        self.Name.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 8).isActive = true
-//
-//
-//
-//        self.view.addSubview(self.progImageView2)
-//
-//
-//        self.progImageView2.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 48).isActive = true
-//        self.progImageView2.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -48).isActive = true
-//
-//        self.progImageView2.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 8).isActive = true
-////
-//  //      self.progImageView2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 20).isActive = true
-////
-//        //self.progImageView2.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor).isActive = true
-//
-//        self.progImageView2.heightAnchor.constraint(equalToConstant: 80).isActive = true
-//        self.progImageView2.widthAnchor.constraint(equalToConstant: 20).isActive = true
-//
-//        self.view.addSubview(self.Abilities)
-//        self.view.addSubview(self.MovesList)
-//
-//
-//        self.MovesList.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-//        self.MovesList.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor, constant: -50).isActive = true
-//        self.MovesList.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
-//        self.MovesList.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
-//
-//        self.view.addSubview(self.decodableDecodeButton)
-//        //self.view.addSubview(self.manualDecodeButton)
-//
-//        self.decodableDecodeButton.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-//        self.decodableDecodeButton.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor, constant: -50).isActive = true
-//        self.decodableDecodeButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
-//        self.decodableDecodeButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
-        
-        
     
     
     

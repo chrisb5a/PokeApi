@@ -103,7 +103,7 @@ extension MainViewController: UITableViewDataSource{
         
         if let imageData = self.imageCache[self.PokePics1[indexPath.row]]{
             cell.pokeImageView.image = UIImage(data: imageData)
-            print("Image in Cache")
+            //print("Image in Cache")
             return cell
 
         }
@@ -113,7 +113,7 @@ extension MainViewController: UITableViewDataSource{
                 
             case .success (let imageData):
                 DispatchQueue.main.async{
-                    print("Image pulled from network")
+                    //print("Image pulled from network")
                     self.imageCache[self.PokePics1[indexPath.row]] = imageData
                     cell.pokeImageView.image = UIImage(data: imageData)
                 }

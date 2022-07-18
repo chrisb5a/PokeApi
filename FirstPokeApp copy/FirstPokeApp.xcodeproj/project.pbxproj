@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2A24A562884EB540037AAD8 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A24A552884EB540037AAD8 /* ImageCache.swift */; };
 		D2CF3C602881EB3200C94757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CF3C5F2881EB3200C94757 /* AppDelegate.swift */; };
 		D2CF3C622881EB3200C94757 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CF3C612881EB3200C94757 /* SceneDelegate.swift */; };
 		D2CF3C642881EB3200C94757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CF3C632881EB3200C94757 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D2A24A552884EB540037AAD8 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		D2CF3C5C2881EB3200C94757 /* FirstPokeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstPokeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2CF3C5F2881EB3200C94757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2CF3C612881EB3200C94757 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				D2CF3C7E2881F6F500C94757 /* NetwrokManager.swift */,
 				D2CF3C9328825D9700C94757 /* NetworkError.swift */,
+				D2A24A552884EB540037AAD8 /* ImageCache.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				D2CF3C602881EB3200C94757 /* AppDelegate.swift in Sources */,
 				D2CF3C622881EB3200C94757 /* SceneDelegate.swift in Sources */,
 				D2CF3C7F2881F6F500C94757 /* NetwrokManager.swift in Sources */,
+				D2A24A562884EB540037AAD8 /* ImageCache.swift in Sources */,
 				D2CF3C9D2883E0E800C94757 /* UIStackViewExtension.swift in Sources */,
 				D2CF3C9428825D9700C94757 /* NetworkError.swift in Sources */,
 				D2CF3C982882EE1C00C94757 /* PokemonI.swift in Sources */,
