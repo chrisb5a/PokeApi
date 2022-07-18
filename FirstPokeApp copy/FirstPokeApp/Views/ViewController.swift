@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleToFill
-        imageView.image = UIImage(named: "Mean_1")
+        imageView.image = UIImage(named: "PokeImg")
         return imageView
         
     }()

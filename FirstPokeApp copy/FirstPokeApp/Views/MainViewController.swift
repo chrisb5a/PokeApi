@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     let network: NetworkManager = NetworkManager()
     var PokePics: [UIImage] = []
     var PokePics1: [Int] = []
+    var currentPage = 0
     
     lazy var PokeTable: UITableView = {
         let table = UITableView(frame: .zero)
@@ -21,6 +22,7 @@ class MainViewController: UIViewController {
         table.dataSource = self
         table.backgroundColor = .systemCyan
         table.delegate = self
+        table.prefetchDataSource = self
         // Register
         table.register(ProgTableViewCell.self, forCellReuseIdentifier: ProgTableViewCell.reuseID)
         return table
@@ -30,16 +32,33 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         self.setUpUI()
         
+        self.requestPage()
+        
+        
+    }
+    
+    private func setUpUI(){
+        self.view.addSubview(self.PokeTable)
+        self.PokeTable.bindToSuperView()
+    
+    }
+    
+    private func requestPage(){
+        
         for i in 1...150{
             PokePics1.append(i)
         }
         
-        self.network.getData(url: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/30.png")){
+        let url_left = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"
+        let url_right = ".png"
+        var url_middle = String(self.currentPage+1)
+        
+        self.network.getData(url: URL(string: url_left + url_middle + url_right)){
             result in
             
             switch result{
             case .success(let data):
-                print(data)
+                self.currentPage += 1
                 self.PokePics.append(UIImage(data: data) ?? UIImage(named:"Mean_1000")!)
                 DispatchQueue.main.async {
                     self.PokeTable.reloadData()
@@ -51,12 +70,6 @@ class MainViewController: UIViewController {
         }
         
         
-    }
-    
-    private func setUpUI(){
-        self.view.addSubview(self.PokeTable)
-        self.PokeTable.bindToSuperView()
-    
     }
 }
 
@@ -113,6 +126,18 @@ extension MainViewController: UITableViewDelegate{
         self.navigationController?.pushViewController(detailVc, animated: true)
         detailVc.indexP = indexPath.row
         print( "HHHHHHHHHHHHHHHHHHHHHEEeeeeeeeeeeerrrrrrrrrreeeeee")
-    }}
+    }
+    
+}
+
+extension MainViewController: UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        let lastIndexPath = IndexPath(row: self.PokePics.count - 1, section :0)
+        guard indexPaths.contains(lastIndexPath) else {return}
+        self.requestPage()
+    }
+        
+    }
 
 

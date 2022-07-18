@@ -83,7 +83,7 @@ class ProgTableViewCell: UITableViewCell {
     override func prepareForReuse(){
         self.titleLabel.text = "Pokemon"
         self.overviewLabel.text = "Pokemon Description"
-        self.pokeImageView.image = UIImage(named: "Mean_1")
+        self.pokeImageView.image = UIImage(named: "PokeImg")
     }
     
 
