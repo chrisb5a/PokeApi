@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     var PokePics: [UIImage] = []
     var PokePics1: [Int] = []
     var currentPage = 0
+    var imageCache: [Int: Data] = [:]
     
     lazy var PokeTable: UITableView = {
         let table = UITableView(frame: .zero)
@@ -98,12 +99,22 @@ extension MainViewController: UITableViewDataSource{
         cell.titleLabel.text = titletxt
         cell.overviewLabel.text = Ovtext
         
-        //cell.configure(Pokepics: self.PokePics[indexPath.row])
+        
+        
+        if let imageData = self.imageCache[self.PokePics1[indexPath.row]]{
+            cell.pokeImageView.image = UIImage(data: imageData)
+            print("Image in Cache")
+            return cell
+
+        }
+        
         self.network.fetchImageData(urlStr: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+String(self.PokePics1[indexPath.row])+".png"){
             result in switch result{
                 
             case .success (let imageData):
                 DispatchQueue.main.async{
+                    print("Image pulled from network")
+                    self.imageCache[self.PokePics1[indexPath.row]] = imageData
                     cell.pokeImageView.image = UIImage(data: imageData)
                 }
                 
