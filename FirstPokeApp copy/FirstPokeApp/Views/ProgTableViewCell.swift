@@ -28,6 +28,7 @@ class ProgTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.font = label.font.withSize(12)
+        label.textAlignment = .center
         label.setContentHuggingPriority(.required, for: .vertical)
         label.setContentCompressionResistancePriority(.required, for: .vertical)
         label.text = "Pokemon"
@@ -40,6 +41,7 @@ class ProgTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.font = label.font.withSize(12)
+        label.textAlignment = .center
         label.setContentHuggingPriority(.defaultLow, for: .vertical)
         label.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         label.text = "Pokemon attributes"
@@ -69,6 +71,7 @@ class ProgTableViewCell: UITableViewCell {
         hStack.addArrangedSubview(vStack)
         
         self.contentView.addSubview(hStack)
+        
         
         hStack.bindToSuperView()
         
